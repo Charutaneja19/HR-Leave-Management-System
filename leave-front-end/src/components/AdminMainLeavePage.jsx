@@ -1,6 +1,8 @@
-import { Table, Button, Space } from 'antd';
+import { Table, Button, Space,  Typography } from 'antd';
 import { useState, useEffect } from 'react';
 import { handleApproveReject, getLeavesForAllSubordinates} from '../services/leave-service';
+const { Title } = Typography;
+
 export default function AdminMaineLeavePage(){
     const [leavesData, setLeavesData] = useState([]);
 
@@ -86,7 +88,7 @@ export default function AdminMaineLeavePage(){
     // }, []);
     return (
         <>
-        <h6>Admin Leave Page</h6>
+        <Title>Admin Leave Page</Title>
         <Table dataSource={leavesData} columns={generateColumns()} />
         </>
     )
